@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Adi Luqman, personal website, Adi, full stack dev, portfolio design">
+    <meta name="description" content="Its Adi Luqman's Profile">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link id="icon" rel="shortcut icon" href="./assets/images/icon.png" type="image/x-png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio Website | Adi</title>
+    <link rel="icon" type="image/png" href="Title.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+  
+        
+    <div class="clock" id="clock"></div>
+  
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="____.html">About Me</a></li>
+            <li><a href="____.html">Education</a></li>
+            <li><a href="____.html">Experience</a></li>
+            <li><a href="____.html">Projects</a></li>
+            <li><a href="____.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Home Section -->
+<section class="home section" id="home">
+    <section class="home">
+        <div class="home">
+            <div class="home-content">
+                <h2>Turning Emotions into Music</h2>
+        <h3>Hi, I’m Adi Luqman</h3>
+        <h1>Your Aspiring Music Composer & Sound Designer 🎵</h1>
+        <p>
+            I’m passionate about crafting unique soundscapes, composing immersive melodies, and bringing every musical piece to life. My work blends creativity and emotion to tell stories through sound.
+        </p>
+        <p>Explore my portfolio to discover my journey, projects, and the inspiration behind my music:</p>
+ 
+               
+         
+                
+            </div>
+            <div class="contact-image"  onclick="showInfo()">
+                <img src="pic 3.JPG" alt="Adi Luqman">
+            
+              <i class="fas fa-info-circle icon-click"></i>
+            </div>
+   
+</section>        
+</section>
+        
+
+<!-- Contact Section -->
+<section class="contact-section section" id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or want to collaborate, feel free to reach out!</p>
+
+        
+        <!-- Contact Form on the Right -->
+        <div class="contact-form-container">
+         <div class="container">
+        
+            <form action="#">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+
+           <div class="contact-image">
+            <img src="get.jpg" alt="Contact Us">
+        </div> 
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: About Me -->
+        <div class="footer-column">
+            <h4>About Me</h4>
+            <p>
+                Passionate music composer and sound designer, turning emotions into melodies. Let’s create something unforgettable together!
+            </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Social Media -->
+        <div class="footer-column">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+                <a href="facebook.html"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        &copy; 2025 Adi Luqman | All Rights Reserved
+    </div>
+</footer>
+
+<!-- SweetAlert for pop-up -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function showInfo() {
+        Swal.fire({
+            title: 'Image Information',
+            text: 'This is a detailed description of the image!',
+            imageUrl: 'pic 3.JPG',
+            imageWidth: 100,
+            imageAlt: 'Image',
+        });
+    }
+
+    // Highlight the active navigation link
+function highlightActiveNav() {
+    const navLinks = document.querySelectorAll('nav a');
+    const currentURL = window.location.href;
+
+    navLinks.forEach(link => {
+        if (link.href === currentURL) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Call the function when the page loads
+window.onload = function() {
+    document.body.style.opacity = 1;
+    highlightActiveNav();
+};
+
+    function sendToWhatsApp(event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Your WhatsApp number (in international format, without '+' or '0' at the beginning)
+        const phoneNumber = "60102990887"; // Replace with your number!
+
+        // Build the WhatsApp message
+        const whatsappMessage = `Hello! 👋%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+
+        // Open WhatsApp
+        const whatsappURL = `https://wa.me/+60102990887`;
+        window.open(whatsappURL, "_blank");
+    }
+
+    // Function to check if elements are in viewport
+function checkSections() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight * 0.8) {
+            section.style.transitionDelay = `${index * 0.2}s`; // Delay for staggered effect
+            section.classList.add('show');
+        }
+    });
+}
+
+
+
+    // Simple clock functionality
+    function updateClock() {
+        const clockElement = document.getElementById('clock');
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial call
+</script>
+</body>
+</html>
