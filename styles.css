@@ -20,6 +20,15 @@
             align-items: center;
         }
 
+        /* Fade effect */
+body.fade-out {
+    opacity: 0;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
 
         /* Navbar Styles */
         header {
