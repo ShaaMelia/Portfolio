@@ -22,7 +22,7 @@
   
 
 </head>
-<body>
+<body class="fade-in">
 
 <!-- Navbar -->
 <header>
@@ -204,6 +204,28 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+
+   // Fade-out effect before navigating
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a");
+
+    links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent instant navigation
+            const target = link.getAttribute("href");
+
+            // Add fade-out class
+            document.body.classList.add("fade-out");
+
+            // Wait for the fade-out to complete, then navigate
+            setTimeout(() => {
+                window.location.href = target;
+            }, 500); // Match the CSS transition time
+        });
+    });
+});
+
+    
         let currentVideo = 0;
         const videos = document.querySelectorAll('.video-section video');
 
