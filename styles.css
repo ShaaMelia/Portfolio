@@ -449,8 +449,8 @@ gap: 15px;
     display: inline-block;
     overflow: hidden; 
     border-radius: 50%; /* Makes the container a circle */
-    width: 260px; /* Set width */
-    height: 260px; /* Set height to match width for a circle */
+    width: 320px; /* Set width */
+    height: 320px; /* Set height to match width for a circle */
 }
 
 /* Circular image */
