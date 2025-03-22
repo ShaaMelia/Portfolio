@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link id="icon" rel="shortcut icon" href="./assets/images/icon.png" type="image/x-png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Adi's Website | About</title>
+      <title>Adi's Website | About</title>
     <link rel="icon" type="image/png" href="Title.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
@@ -19,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
 
 </head>
@@ -27,7 +29,7 @@
 <!-- Navbar -->
 <header>
     <div class="logo">
-        <img src="LOGO.png" alt="Logo">
+        <img src="logo.png" alt="Logo">
     </div>
   
         
@@ -46,32 +48,21 @@
 </header>
 
 <section class="about-section">
-<section class="about">
-<div class="about-content">
-    <h2>Turning Emotions into Music</h2>
-    <h3>Hi, I’m Adi Luqman</h3>
-    <h1>Your Aspiring Music Composer & Sound Designer 🎵</h1>
-    <p>
-        I’m passionate about crafting unique soundscapes, composing immersive melodies, and bringing every musical piece to life. My work blends creativity and emotion to tell stories through sound.
-    </p>
-    <p>Explore my portfolio to discover my journey, projects, and the inspiration behind my music:</p>
+    <div class="about-content">
+        <h1>Meet Adi Luqman</h1>
+        <h2>Crafting Sounds, Creating Stories</h2>
+        <p>Composer | Music Producer | Innovator</p>
+    </div>
+</section>
 
-</div>
-<div class="about-image"  onclick="showInfo()">
-    <img src="about.jpg" alt="Adi Luqman">
-
-  <i class="fas fa-info-circle icon-click"></i>
-</div>
- </section>          
-  </section>
 
 
 
   
 <section class="skill" id="skill">
 
-    <h1>Symphony of Mastery: A Journey Through My Skills</h1>
-
+    <h1>A Journey Through My Skills</h1>
+    <div class="container">
     <div class="skill-section">
         <h2>🎼 COMPOSITION & MUSIC PRODUCTION SKILLS</h2>
         <h3>Music Theory - 90%</h3>
@@ -109,10 +100,59 @@
         <div class="skill-bar"><div class="progress" style="width: 85%"></div></div>
         <p class="skill-description">"Experience working with artists, producers, and fellow composers."</p>
     </div>
-
+</div>
 </section>
 
 
+
+<div class="education-container">
+    <h2 id="education">Education Timeline</h2>
+    <div class="schtimeline">
+        <div class="schtimeline-item">
+            <h3>2018 - 2020</h3>
+            <p>Diploma in English for Communication</p>
+        </div>
+        <div class="schtimeline-item">
+            <h3>2021 - 2025</h3>
+            <p>Bachelor in Music Composition (In Progress)</p>
+        </div>
+        <div class="schtimeline-item">
+            <h3>2026+</h3>
+            <p>Future Learning & Career Growth</p>
+        </div>
+    </div>
+
+    <h2 id="work">Work Experience</h2>
+    <section class="work-experience">
+    <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="admin">Mixing & Mastering 🎼 </button>
+        <button class="tab-btn" data-tab="retail">Instrument Remakes & Arrangements </button>
+        <button class="tab-btn" data-tab="event">Composition & Production 🎵 </button>
+        <button class="tab-btn" data-tab="event">International Clients 🌎 </button>
+    </div>
+
+    <div class="tab-content active" id="admin">
+        <div class="work-box">
+            <h3>Admin Staff - Princess House</h3>
+            <p>Manage bookings, create promotional content & oversee event planning.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="retail">
+        <div class="work-box">
+            <h3>Retail Associate - Clothing Store</h3>
+            <p>Handle inventory, assist customers & manage daily sales operations.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="event">
+        <div class="work-box">
+            <h3>Floor Manager - Event Hall</h3>
+            <p>Supervise event setup, coordinate teams & ensure smooth execution.</p>
+        </div>
+    </div>
+</div>
+</section>
 
 
 <!-- Footer -->
@@ -143,7 +183,8 @@
 <div class="footer-contact-info">
     <div class="footer-contact-item">
         <i class="fas fa-phone"></i>
-        <a href="https://wa.me/+60102990887">+60 102-990-887</a>
+        <a href="https://wa.me/+60102990887" style="font-family: 'Oswald', serif; font-size: 16px;">+60 102-990-887</a>
+
     </div>
     <div class="footer-contact-item">
         <i class="fas fa-map-marker-alt"></i>
@@ -176,7 +217,77 @@
 <!-- SweetAlert for pop-up -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
+
+
+
+
+<script>  
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".schtimeline-item").forEach((item, index) => {
+    gsap.fromTo(item, 
+        { opacity: 0, y: 50 }, // Start (hidden & shifted down)
+        { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.5, // Faster animation
+            delay: index * 0.2, // Faster stagger
+            scrollTrigger: {
+                trigger: item,
+                start: "top 75%", // Start earlier (ensures visibility when in view)
+                end: "top 30%", // Ends fade-out earlier
+                toggleActions: "play none none reverse", // Plays once, reverses when out
+                scrub: false, // Remove scrub to ensure it fully animates
+            }
+        }
+    );
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all tabs and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add 'active' class to clicked tab and corresponding content
+            button.classList.add('active');
+            document.getElementById(button.dataset.tab).classList.add('active');
+        });
+    });
+
+    // **Set tab pertama aktif secara default**
+    tabButtons[0].classList.add('active');
+    tabContents[0].classList.add('active');
+});
+
+
+
+
+        // Work experience animation
+        gsap.utils.toArray(".work-box").forEach(box => {
+            gsap.fromTo(box, 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 1, 
+                  scrollTrigger: {
+                      trigger: box,
+                      start: "top 80%",
+                      end: "top 50%", // Adjusted for smoother effect
+                      toggleActions: "play none none reverse"
+                  }
+                }
+            );
+        });
+
+
+
         let currentVideo = 0;
         const videos = document.querySelectorAll('.video-section video');
 
@@ -297,6 +408,31 @@ links.forEach(link => {
 window.addEventListener('load', () => {
     document.body.classList.add('slide-in');
 });
+
+
+
+// Function to apply fade-in scroll animation
+function applyScrollAnimation(selector) {
+    gsap.utils.toArray(selector).forEach(element => {
+        gsap.fromTo(element, 
+            { opacity: 0, y: 50 },  // Starts hidden & moved down
+            { opacity: 1, y: 0, duration: 1, 
+              scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "top 50%",
+                  toggleActions: "play none none reverse"
+              }
+            }
+        );
+    });
+}
+
+// Apply animation to multiple sections
+applyScrollAnimation(".skill");
+applyScrollAnimation(".education-container");
+applyScrollAnimation(".work-experience"); // Add more as needed
+
 
 </script>
 </body>
