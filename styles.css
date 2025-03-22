@@ -167,93 +167,302 @@ transition: transform 0.3s ease;
 }
 
 
+.education-container {
+    padding: 50px 20px;
+    position: relative; /* Ensure it contains the absolute h1 */
+    padding-top: 80px; /* Adjust space for h1 */
+    backdrop-filter: blur(10px); /* Background blur effect */
+    width: 100%; /* Full viewport width */
+    max-width: none; /* Ensures it stretches fully */
+    border-radius: 0;
+    box-sizing: border-box;
+    margin: 0; /* No margin to prevent centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.skill {
-background: radial-gradient(circle, #e5f7ff, #006983, #00131e);
-color: #fff;
-padding: 50px 0;
-text-align: center;
-border-radius: 5px;
-text-decoration: none;
-border: 2px solid transparent;
-transition: 0.3s ease, border 0.3s ease;
-box-shadow: 0 2px 8px rgba(11, 66, 79, 0.3);
-gap: 20px;
-margin: 0 auto; 
-flex-wrap: nowrap;
+h2#education, 
+h2#work {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    color: #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* Expanding background */
+    position: relative; /* Change to absolute if needed */
+    width: 100vw; /* Full width of viewport */
+    left: 0;
+    right: 0;
+    
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center; /* Centers the text */
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 768px) {
+    h2#education, 
+    h2#work {
+        font-size: 24px;
+    }
+}
+
+.schtimeline {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.schtimeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 90%;
+    background: #ffffff;
+    transform: translateX(-50%);
+}
+
+/* Add the upward arrow at the top of the timeline */
+.schtimeline::after {
+    content: '🎓'; /* Graduation cap emoji */
+    position: absolute;
+    top: -25px; /* Move it up slightly */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px; /* Increase size */
+    color: #ffffff;
+    
+}
+
+.schtimeline-item {
+    position: relative;
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    max-width: 1200px; 
+    width: 100%;
+    min-height: 100px; /* Taller shape */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .schtimeline-item {
+        width: 95%; /* Slightly narrower for mobile */
+        max-width: none; /* Removes max-width for flexibility */
+        padding: 25px;
+        min-height: 100px; /* Slightly smaller hexagon */
+    }
+}
+
+.schtimeline-item h3 {
+    margin: 0;
+    color: #1e525f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.schtimeline-item p {
+    margin: 5px 0 0;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 
-.skill-section {
-background: linear-gradient(180deg, #5f96a7 0%, #031f30 100%);
-color: #fff;
-text-align: center;
-margin: 1rem auto;
-padding: 1rem;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-animation: slideIn 1s ease;
-width: 80%;
-max-width: 600px;
+.work-experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #1e525f;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: #159a9c;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+.work-box {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    width: 60%; /* Lebar default */
+    max-width: 800px; /* Had maksimum supaya tak terlalu besar */
+    min-width: 300px; /* Had minimum supaya tak terlalu kecil */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    height: 150px;
+    flex-grow: 1; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .work-box {
+        width: 90%;
+    }
+}
+
+
+
+.skill {
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;  
+    backdrop-filter: blur(10px); /* Background blur effect */
+    border: 2px solid transparent;
+    transition: 0.3s ease, border 0.3s ease;
+    box-shadow: 0 2px 8px rgba(11, 66, 79, 0.3);
+    gap: 20px;
+    margin: 0; /* Ensure no margin */
+    flex-wrap: nowrap;
+}
+
+.about-section, 
+.skill { 
+    margin: 0; /* Ensures no margin for both sections */
+    padding-bottom: 0; /* Prevents extra space */
+}
+
+.skill-container {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers all sections horizontally */
+    gap: 20px; /* Adds space between the sections */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    margin-top: 20px;
 }
 
 
 .skill h1 {
-font-family: 'Cinzel', serif;
-font-weight: 700;
-font-size: 3.2rem;
-margin-bottom: 20px;
-color: #000000;
-transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin-top: 0; /* Ensures no space above */
+    margin-bottom: 20px;
+    color: #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* Expanding background */
+    position: relative;
+    width: 100vw; /* Full width of viewport */
+    left: 0;
+    right: 0;
+    
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center; /* Centers the text */
 }
+
 
 .skill h1:hover {
-text-shadow: 0 0 10px #f2fffe, 0 0 20px #cffffd;
+    transform: scale(1.05);
 }
+
+.about-section,
+.skill {
+    margin: 0;
+    padding: 0;
+}
+
+.skill-section {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    margin: 1rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 30%; /* Adjust width to fit 3 sections in a row */
+    min-width: 280px; /* Ensures they don’t shrink too much */
+}
+
+/* Title */
 .skill-section h2 {
-text-align: center;
-margin-bottom: 1rem;
-font-family: 'Oswald', sans-serif;
-font-weight: 300;
-font-size: 2.1rem;
-color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #dcf2ff;
 }
 
+/* Skill Name */
 .skill-section h3 {
-text-align: center;
-margin-bottom: 1rem;
-font-family: 'Raleway', serif;
-font-weight: 700;
-font-size: 1.4rem;
-color: #a4e5ec;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #3cd2ff;
 }
 
-.skill-section p {
-text-align: center;
-margin-bottom: 1rem;
-font-family: 'Raleway', sans-serif;
-font-weight:200;
-font-size: 1.1rem;
-color: #f6feff;
-}
-
-
+/* Skill Bar */
 .skill-bar {
-position: relative;
-height: 20px;
-background: #e0e0e0;
-border-radius: 10px;
-overflow: hidden;
-margin: 0.5rem 0 1rem;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0.5rem 0;
 }
+
+/* Progress */
 .progress {
-height: 100%;
-border-radius: 10px;
-background: linear-gradient(90deg, #5f96a7 0%, #031f30 100%);
-width: 0;
-animation: fillBar 2s ease forwards;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 0;
+    animation: fillBar 1.5s ease forwards;
 }
+
 .skill-description {
 font-style: italic;
 margin-bottom: 1rem;
@@ -471,15 +680,45 @@ text-shadow: 0 0 10px #f2fffe, 0 0 20px #cffffd;
 
 
 .about-section {
-max-width: 1000px;
-margin: 0 auto;
-padding: 30px 20px;
-font-family: 'Raleway', sans-serif;
-line-height: 1.6;
-color: #dcedf8;
-
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
+/* Blurred Background */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('abouttt.JPG') no-repeat center center/cover;
+    filter: blur(3px); /* Adjust blur strength */
+    opacity: 0.7; /* Adjust transparency */
+    z-index: -1; /* Places it behind the content */
+}
+
+/* Optional: Dark Overlay for Better Text Readability */
+.about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark transparent overlay */
+    z-index: -1;
+}
 .about {
 padding: 20px;
 color: #fff;
@@ -516,21 +755,89 @@ margin: 0 auto;
 padding: 20px;
 flex-wrap: wrap;            /* Wrap for responsiveness */
 gap: 20px;                  /* Add space between content and image */
+flex-direction: column;
+}
+
+/* About Section */
+.about-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Blurred Background */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('abouttt.JPG') no-repeat center center/cover;
+    filter: blur(4px); /* Slightly stronger blur */
+    opacity: 0.7; /* Adjust transparency */
+    z-index: -1;
+}
+
+/* Dark Overlay for Readability */
+.about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+    z-index: -1;
 }
 
 /* About Content */
 .about-content {
-padding: 30px;
-border-radius: 15px;
-text-align: left;
-flex: 1;
-max-width: 50%;             /* Limit content width */
-margin: 0 auto;             /* Center the content */
-display: flex;
-flex-direction: column;
-justify-content: center;    /* Center content vertically */
-gap: 15px;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1.4;
 }
+
+/* Headings and Text */
+.about-content h1 {
+    font-size: 4rem; /* Make it bigger */
+    font-weight: 900; /* Even bolder */
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Optional for impact */
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.about-content h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ddd; /* Slightly lighter for contrast */
+    margin-bottom: 6px;
+}
+
+.about-content p {
+    font-size: 1.4rem;
+    color: white; /* White for better readability */
+    margin-top: 0;
+    font-weight: 300;
+}
+
 
 
 /* Oval shape image container */
@@ -558,27 +865,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a soft shadow on hover */
 }
 
 
-.about-section h1 {
-font-family: 'Lora', serif;
-font-weight: 700;
-font-size: 3.2rem;
-margin-bottom: 20px;
-color: #ffeac7;
-}
 
-.about-section h2 {
-font-size: 2rem;
-color: #dcedf8;
-margin-bottom: 20px;
-text-align: center;
-letter-spacing: 1px;
-}
-
-.about-section p {
-font-size: 1.2rem;
-margin: 10px 0;
-text-align: justify;
-}
 
 .about-section .highlight {
 font-weight: bold;
@@ -1158,6 +1445,7 @@ gap: 12px; /* Space between icon and text */
 font-size: 1.2rem;
 padding: 5px 8px;
 transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .footer-contact-item:hover {
@@ -1182,6 +1470,7 @@ justify-content: center;
 color: #ceeef7;
 text-decoration: none;
 font-weight: 500;
+
 }
 
 .footer-contact-item a:hover {
