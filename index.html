@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link id="icon" rel="shortcut icon" href="./assets/images/icon.png" type="image/x-png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link id="icon" rel="shortcut icon" href="./assets/images/icon.png" type="image/x-png">   
     <title>Portfolio Website | Adi</title>
     <link rel="icon" type="image/png" href="Title.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
@@ -253,11 +252,37 @@
 <!-- SweetAlert for pop-up -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 
 
 
 <script>
+
+
+// Function to apply fade-in scroll animation
+function applyScrollAnimation(selector) {
+    gsap.utils.toArray(selector).forEach(element => {
+        gsap.fromTo(element, 
+            { opacity: 0, y: 50 },  // Starts hidden & moved down
+            { opacity: 1, y: 0, duration: 1, 
+              scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "top 50%",
+                  toggleActions: "play none none reverse"
+              }
+            }
+        );
+    });
+}
+
+// Apply animation to multiple sections
+applyScrollAnimation(".project-section");
+applyScrollAnimation(".video-container");
+applyScrollAnimation(".review-section"); // Add more as needed
+applyScrollAnimation(".contact-form-container");
 
 function revealTimeline() {
     const items = document.querySelectorAll('.timeline-item');
